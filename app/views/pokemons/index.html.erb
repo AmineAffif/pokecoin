@@ -1,0 +1,13 @@
+<h1>Welcome to the Pokemon Exchange!</h1>
+
+<h2>List of Pokemon</h2>
+<ul class="pokemon_list">
+  <% @pokemons.each do |pokemon| %>
+    <li class="pokemon_item">
+      <%= link_to pokemon_path(pokemon) do %>
+        <%= image_tag pokemon.image_path %>
+        <p><%= pokemon.name %></p>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

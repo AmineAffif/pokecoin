@@ -1,0 +1,18 @@
+<h1>My Transactions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>Pokemon</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @transactions.each do |transaction| %>
+      <tr>
+        <td><%= transaction.action %></td>
+        <td><%= link_to transaction.pokemon.name, pokemon_path(transaction.pokemon) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

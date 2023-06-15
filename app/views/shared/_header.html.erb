@@ -1,0 +1,11 @@
+<div class="header">
+  <div class="home_link">
+    <%= link_to "Home", root_path %>
+  </div>
+  <div class="other_links">
+    <%= link_to "My profile", me_path(@pokemon&.user) %>
+    <% if user_signed_in? %>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "red_link" %>
+    <% end %>
+  </div>
+</div>

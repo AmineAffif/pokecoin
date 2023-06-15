@@ -1,0 +1,9 @@
+<h1>Add Money to Wallet</h1>
+
+<%= form_tag me_add_path, method: :patch do %>
+  <p>
+    <%= label_tag :amount, "Amount to add:" %>
+    <%= number_field_tag :amount %>
+  </p>
+  <%= submit_tag "Add Money" %>
+<% end %>

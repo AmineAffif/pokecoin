@@ -1,0 +1,28 @@
+<h1>Buy Demands sent</h1>
+
+<% @buy_demands_sent.each do |buy_demand| %>
+  <div>
+    <h3>Pokemon: <%= link_to buy_demand.pokemon.name, pokemon_path(buy_demand.pokemon) %></h3>
+    <p>Buyer: <%= buy_demand.buyer.email %></p>
+    <p>Price: <%= buy_demand.pokemon.price.round(2) %>€</p>
+    <% if buy_demand.buyer == current_user %>
+      <%= button_to 'Cancel buy demand', cancel_buy_demand_buy_demand_path(buy_demand), method: :post %>
+    <% end %>
+
+  </div>
+<% end %>
+
+<h1>Buy Demands received</h1>
+
+<% @buy_demands_received.each do |buy_demand| %>
+  <div>
+    <h3>Pokemon: <%= link_to buy_demand.pokemon.name, pokemon_path(buy_demand.pokemon) %></h3>
+    <p>Seller: <%= buy_demand.seller.email %></p>
+    <p>Price: <%= buy_demand.pokemon.price.round(2) %>€</p>
+
+    <% if buy_demand.seller == current_user %>
+      <%= button_to 'Accept', accept_buy_demand_path(buy_demand), method: :post %>
+      <%= button_to 'Reject', reject_buy_demand_path(buy_demand), method: :post %>
+    <% end %>
+  </div>
+<% end %>

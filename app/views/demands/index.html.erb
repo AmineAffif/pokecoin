@@ -1,0 +1,13 @@
+<h1>Buy Demands</h1>
+
+<% @buy_demands.each do |buy_demand| %>
+  <div>
+    <p>Pokemon: <%= buy_demand.pokemon.name %></p>
+    <p>Buyer: <%= buy_demand.buyer.email %></p>
+    <p>Status: <%= buy_demand.status %></p>
+    <% if buy_demand.pending? %>
+      <%= button_to 'Accept', accept_buy_demand_path(buy_demand), method: :patch %>
+      <%= button_to 'Reject', reject_buy_demand_path(buy_demand), method: :patch %>
+    <% end %>
+  </div>
+<% end %>

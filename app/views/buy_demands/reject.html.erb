@@ -1,0 +1,7 @@
+<h1>Reject Buy Demand</h1>
+<p>Are you sure you want to reject this buy demand?</p>
+<p>Pokemon: <%= @buy_demand.pokemon.name %></p>
+<p>Buyer: <%= @buy_demand.buyer.email %></p>
+
+<%= link_to "Reject", reject_buy_demand_path(@buy_demand), method: :post %>
+<%= link_to "Cancel", me_buy_demands_path %>

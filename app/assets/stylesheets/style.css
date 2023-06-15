@@ -1,0 +1,120 @@
+body {
+	background-color: rgb(242, 242, 242);
+	font-family: 'Montserrat', sans-serif;
+	padding: 3rem;
+}
+a {
+	text-decoration: none;
+}
+h1 {
+	font-size: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+h2 {
+	margin-bottom: 1rem;
+}
+button {
+	border: none;
+	border-radius: 2rem;
+	padding: 1rem 3rem;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: all ease-in-out 250ms;
+	margin-top: 2rem;
+	font-weight: bold;
+}
+button:hover {
+	filter: brightness(95%);
+}
+.blue_button_outlined {
+	color: rgb(66, 168, 215);
+	background-color: none;
+	border: 1px rgb(66, 178, 215) solid;
+}
+.red_button_plain {
+	color: rgb(215, 66, 66);
+	background-color: rgb(255 230 230);
+}
+.red_button_outlined {
+	color: rgb(215, 66, 66);
+	background-color: none;
+	border: 1px rgb(215, 66, 66) solid;
+}
+.label {
+	font-weight: bold;
+	width: 8rem;
+}
+.notice {
+	top: 0rem;
+	background-color: rgb(216, 255, 194);
+	color: rgb(60, 138, 24);
+	padding: 2rem 3rem;
+	border-radius: 4rem;
+	margin-bottom: 1rem;
+}
+.alert {
+	top: 0rem;
+	background-color: rgb(255, 224, 224);
+	color: rgb(184, 48, 48);
+	padding: 2rem 3rem;
+	border-radius: 4rem;
+	margin-bottom: 1rem;
+}
+
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 3rem;
+}
+.header a {
+	color: rgb(22, 22, 22);
+}
+.home_link {
+	width: 50%;
+}
+.other_links a {
+	margin-left: 2rem;
+}
+a.red_link {
+	color: rgb(215, 66, 66);
+}
+
+
+.pokemon_list {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	align-items: center;
+}
+.pokemon_item {
+	margin-bottom: 2rem;
+	margin-right: 3rem;
+	transition: all ease-in-out 50ms;
+}
+.pokemon_item:hover {
+	filter: drop-shadow(0 0 0.25rem rgb(187, 159, 20));
+}
+.pokemon_item p {
+	text-align: center;
+}
+.pokemon_item img {
+	width: 100px;
+}
+
+.pokemon_infos {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.info_line {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	margin-bottom: .6rem;
+	flex-wrap: nowrap;
+}
+.pokemon_image {
+	width: 260px;
+}

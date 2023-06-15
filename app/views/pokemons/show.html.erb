@@ -1,0 +1,34 @@
+<%= image_tag @pokemon.image_path, class: 'pokemon_image' %>
+<h1><%= @pokemon.name %></h1>
+<div class="pokemon_infos">
+  <div class="info_line">
+    <p class="label">Price</p>
+    <p class="pokemon_info"><%= @pokemon.price.round(2) %>€</p>
+  </div>
+  <div class="info_line">
+    <p class="label">Weight</p>
+    <p class="pokemon_info"><%= @pokemon.weight %>kg</p>
+  </div>
+  <div class="info_line">
+    <p class="label">Height</p>
+    <p class="pokemon_info"><%= @pokemon.height %>m</p>
+  </div>
+  <div class="info_line">
+    <p class="label">Owner</p>
+    <p class="pokemon_info"><%= @pokemon.user ? @pokemon.user.email : 'None' %></p>
+  </div>
+</div>
+
+<% if current_user && current_user != @pokemon.user %>
+  <% if @pokemon.on_sale && @pokemon.user.nil? %>
+    <%= button_to 'Buy', buy_pokemon_path(@pokemon), method: :post %>
+  <% elsif @pokemon.user.present? && !@pokemon.on_sale %>
+    <%= button_to 'Ask to Buy', buy_demand_pokemon_path(@pokemon), method: :post, class: 'blue_button_outlined' %>
+  <% end %>
+<% elsif current_user && current_user == @pokemon.user %>
+  <% if @pokemon.on_sale %>
+    <%= button_to 'Cancel Sale', cancel_sale_pokemon_path(@pokemon), method: :post, class: 'red_button_plain' %>
+  <% else %>
+    <%= button_to 'Sell', sell_pokemon_path(@pokemon), method: :post, class: 'red_button_outlined' %>
+  <% end %>
+<% end %>
