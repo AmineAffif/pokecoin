@@ -2,9 +2,22 @@
 
 <% @buy_demands_sent.each do |buy_demand| %>
   <div>
-    <h3>Pokemon: <%= link_to buy_demand.pokemon.name, pokemon_path(buy_demand.pokemon) %></h3>
-    <p>Buyer: <%= buy_demand.buyer.email %></p>
-    <p>Price: <%= buy_demand.pokemon.price.round(2) %>€</p>
+    <%= image_tag buy_demand.pokemon.image_path, class: 'pokemon_image' %>
+    
+    <div class="pokemon_infos">
+      <div class="info_line">
+        <p class="label">Pokemon</p>
+        <p class="pokemon_info"><%= link_to buy_demand.pokemon.name, pokemon_path(buy_demand.pokemon) %></p>
+      </div>
+      <div class="info_line">
+        <p class="label">Buyer</p>
+        <p class="pokemon_info"><%= buy_demand.buyer.email %></p>
+      </div>
+      <div class="info_line">
+        <p class="label">Price</p>
+        <p class="pokemon_info"><%= buy_demand.pokemon.price.round(2) %>€</p>
+      </div>
+    </div>
     <% if buy_demand.buyer == current_user %>
       <%= button_to 'Cancel buy demand', cancel_buy_demand_buy_demand_path(buy_demand), method: :post %>
     <% end %>
