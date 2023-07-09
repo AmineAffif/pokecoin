@@ -19,7 +19,7 @@
 ![image](https://github.com/AmineAffif/pokecoin/assets/45182137/aea5c919-63b9-465b-9c88-c4a07ebe7b39)
 
 
-### Lancement du projet
+### Lancement du projet Rails
 ```ruby
 bundle
 ```
@@ -30,4 +30,22 @@ rails db:seed
 
 ```ruby
 rails s
+```
+
+### Lancement du projet avec Docker
+```bash
+docker build -t monimagerails .
+```
+
+```bash
+docker run -p 3000:3000 -v $(pwd):/app monimagerails
+```
+
+```bash
+docker ps
+```
+copier le PID obtenu
+
+```bash
+docker exec -it PID_OBTENU bash -c "rails db:migrate db:seed"
 ```
