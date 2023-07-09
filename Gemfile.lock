@@ -233,6 +233,7 @@ DEPENDENCIES
   devise
   importmap-rails
   jbuilder
+  nokogiri
   puma (~> 5.0)
   rails (~> 7.0.5)
   redis (~> 4.0)

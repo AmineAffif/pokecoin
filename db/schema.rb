@@ -27,7 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_14_215322) do
     t.string "image_path"
     t.integer "weight"
     t.integer "height"
-    t.float "price"
+    t.float "price", default: 0.0
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

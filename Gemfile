@@ -44,6 +44,8 @@ gem "bootsnap", require: false
 
 gem 'devise'
 
+gem 'nokogiri', platforms: :ruby
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
